@@ -1,8 +1,8 @@
+import { useState, useEffect } from 'react';
 import { Searchbar } from './Searchbar/Searchbar';
 import { getImages } from './api/api';
-import PropTypes from 'prop-types';
 import { ImageGallery } from './ImageGallery/ImageGallery';
-import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 export function App() {
   const [status, setStatus] = useState('idle');
@@ -28,6 +28,7 @@ export function App() {
         alert(error.message);
         setStatus('rejected');
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search, page]);
 
   const handleSearchSubmit = search => {
